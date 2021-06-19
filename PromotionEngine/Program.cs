@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PromotionEngine
 {
@@ -20,27 +21,13 @@ namespace PromotionEngine
             ScenarioA.Items.Add(inventory.Find(x => x.ID == "C"));
 
             Cart ScenarioB = new Cart();
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioB.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "A"), 5));
+            ScenarioB.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "B"), 5));
             ScenarioB.Items.Add(inventory.Find(x => x.ID == "C"));
 
             Cart ScenarioC = new Cart();
-            ScenarioC.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioC.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioC.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioC.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioC.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioC.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioC.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioC.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioC.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "A"), 3));
+            ScenarioC.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "B"), 5));
             ScenarioC.Items.Add(inventory.Find(x => x.ID == "C"));
             ScenarioC.Items.Add(inventory.Find(x => x.ID == "D"));
         }
