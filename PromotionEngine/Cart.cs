@@ -9,10 +9,5 @@ namespace PromotionEngine
     class Cart
     {
         public List<SKU> Items = new List<SKU>();
-
-        public Cart(List<SKU> items)
-        {
-            this.Items = items;
-        }
     }
 }
