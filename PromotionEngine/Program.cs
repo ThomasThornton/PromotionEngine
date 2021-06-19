@@ -16,10 +16,22 @@ namespace PromotionEngine
                 new SKU("D", 15)
             };
 
+
+            List<PromotionInfo> info1 = new List<PromotionInfo>();
+            info1.Add(new PromotionInfo("A", 3));
+
+            List<PromotionInfo> info2 = new List<PromotionInfo>();
+            info2.Add(new PromotionInfo("B", 2));
+
+            List<PromotionInfo> info3 = new List<PromotionInfo>();
+            info3.Add(new PromotionInfo("C", 1));
+            info3.Add(new PromotionInfo("D", 1));
+
             List<Promotion> promotions = new List<Promotion>()
             {
-                new Promotion(1, "A", 3, 130),
-                new Promotion(2, "B", 2, 45)
+                new Promotion(1, info1, 130),
+                new Promotion(2, info2, 45),
+                new Promotion(3, info3, 30)
             };
 
             Cart ScenarioA = new Cart();

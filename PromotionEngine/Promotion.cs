@@ -9,15 +9,13 @@ namespace PromotionEngine
     class Promotion
     {
         public int ID { get; set; }
-        public string SKU { get; set; }
-        public int Amount { get; set; }
+        public List<PromotionInfo> Info { get; set; }
         public float PromotionPrice { get; set; }
 
-        public Promotion(int id, string sku, int amount, float promotionprice)
+        public Promotion(int id, List<PromotionInfo> info, float promotionprice)
         {
             this.ID = id;
-            this.SKU = sku;
-            this.Amount = amount;
+            this.Info = info;
             this.PromotionPrice = promotionprice;
         }
     }
