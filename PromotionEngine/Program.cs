@@ -8,12 +8,19 @@ namespace PromotionEngine
     {
         static void Main(string[] args)
         {
-            List<SKU> inventory = new List<SKU>();
+            List<SKU> inventory = new List<SKU>()
+            {
+                new SKU("A", 50),
+                new SKU("B", 30),
+                new SKU("C", 20),
+                new SKU("D", 15)
+            };
 
-            inventory.Add(new SKU("A", 50));
-            inventory.Add(new SKU("B", 30));
-            inventory.Add(new SKU("C", 20));
-            inventory.Add(new SKU("D", 15));
+            List<Promotion> promotions = new List<Promotion>()
+            {
+                new Promotion(1, "A", 3, 130),
+                new Promotion(2, "B", 2, 45)
+            };
 
             Cart ScenarioA = new Cart();
             ScenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
