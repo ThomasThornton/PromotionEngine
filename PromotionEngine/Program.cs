@@ -20,29 +20,29 @@ namespace PromotionEngine
             ScenarioA.Items.Add(inventory.Find(x => x.ID == "C"));
 
             Cart ScenarioB = new Cart();
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "C"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "A"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "A"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "A"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "A"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "A"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioB.Items.Add(inventory.Find(x => x.ID == "C"));
 
             Cart ScenarioC = new Cart();
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "C"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "D"));
+            ScenarioC.Items.Add(inventory.Find(x => x.ID == "A"));
+            ScenarioC.Items.Add(inventory.Find(x => x.ID == "A"));
+            ScenarioC.Items.Add(inventory.Find(x => x.ID == "A"));
+            ScenarioC.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioC.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioC.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioC.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioC.Items.Add(inventory.Find(x => x.ID == "B"));
+            ScenarioC.Items.Add(inventory.Find(x => x.ID == "C"));
+            ScenarioC.Items.Add(inventory.Find(x => x.ID == "D"));
         }
     }
 }
