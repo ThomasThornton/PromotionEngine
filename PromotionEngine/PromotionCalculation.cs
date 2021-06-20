@@ -14,12 +14,21 @@ namespace PromotionEngine
 
             int cartCount = cart.Items.GroupBy(x => x.ID).Where(y => promotion.Info.Any(z => y.Key == z.SKU && y.Count() >= z.Amount)).Select(y => y.Count()).Sum();
 
+            var skuID = cart.Items.GroupBy(x => x.ID).Where(y => promotion.Info.Any(z => y.Key == z.SKU && y.Count() >= z.Amount)).Select(y => y.Key);
+            
             int promotionCount = promotion.Info.Sum(e => e.Amount);
 
             while (cartCount >= promotionCount)
             {
                 total += promotion.PromotionPrice;
                 cartCount -= promotionCount;
+            }
+
+            if (cartCount > 0 && skuID.Count() > 0)
+            {
+                var temp = skuID.First();
+                double skuPrice = cart.Items.Find(x => x.ID == temp).Price;
+                total += cartCount * skuPrice;
             }
 
             return total;
