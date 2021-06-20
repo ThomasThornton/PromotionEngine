@@ -24,7 +24,7 @@ namespace PromotionEngine
                 cartCount -= promotionCount;
             }
 
-            if (cartCount > 0 && skuID.Count() > 0)
+            if (cartCount > 0 && skuID.Count() > 0 && promotion.Info.Count() < 2)
             {
                 var temp = skuID.First();
                 double skuPrice = cart.Items.Find(x => x.ID == temp).Price;

@@ -52,16 +52,28 @@ namespace PromotionEngine
             List<double> promotionPrices = promotions.Select(promotion => PromotionCalculation.GetCartTotal(scenarioA, promotion)).ToList();
             double originalPrice = scenarioA.Items.Sum(x => x.Price);
             double promotionPrice = promotionPrices.Sum();
+            if (promotionPrice == 0)
+                promotionPrice = originalPrice;
+            else
+                promotionPrices.Sum();
             Console.WriteLine("Cart: ScenarioA, Original price: " + originalPrice + ", Promotion price: " + promotionPrice);
 
             promotionPrices = promotions.Select(promotion => PromotionCalculation.GetCartTotal(scenarioB, promotion)).ToList();
             originalPrice = scenarioB.Items.Sum(x => x.Price);
             promotionPrice = promotionPrices.Sum();
+            if (promotionPrice == 0)
+                promotionPrice = originalPrice;
+            else
+                promotionPrices.Sum();
             Console.WriteLine("Cart: ScenarioB, Original price: " + originalPrice + ", Promotion price: " + promotionPrice);
 
             promotionPrices = promotions.Select(promotion => PromotionCalculation.GetCartTotal(scenarioC, promotion)).ToList();
             originalPrice = scenarioC.Items.Sum(x => x.Price);
             promotionPrice = promotionPrices.Sum();
+            if (promotionPrice == 0)
+                promotionPrice = originalPrice;
+            else
+                promotionPrices.Sum();
             Console.WriteLine("Cart: ScenarioC, Original price: " + originalPrice + ", Promotion price: " + promotionPrice);
         }
     }
