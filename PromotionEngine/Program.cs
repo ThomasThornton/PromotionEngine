@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PromotionEngine
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -54,8 +54,6 @@ namespace PromotionEngine
             double promotionPrice = promotionPrices.Sum();
             if (promotionPrice == 0)
                 promotionPrice = originalPrice;
-            else
-                promotionPrices.Sum();
             Console.WriteLine("Cart: ScenarioA, Original price: " + originalPrice + ", Promotion price: " + promotionPrice);
 
             promotionPrices = promotions.Select(promotion => PromotionCalculation.GetCartTotal(scenarioB, promotion)).ToList();
@@ -63,8 +61,6 @@ namespace PromotionEngine
             promotionPrice = promotionPrices.Sum();
             if (promotionPrice == 0)
                 promotionPrice = originalPrice;
-            else
-                promotionPrices.Sum();
             Console.WriteLine("Cart: ScenarioB, Original price: " + originalPrice + ", Promotion price: " + promotionPrice);
 
             promotionPrices = promotions.Select(promotion => PromotionCalculation.GetCartTotal(scenarioC, promotion)).ToList();
@@ -72,8 +68,6 @@ namespace PromotionEngine
             promotionPrice = promotionPrices.Sum();
             if (promotionPrice == 0)
                 promotionPrice = originalPrice;
-            else
-                promotionPrices.Sum();
             Console.WriteLine("Cart: ScenarioC, Original price: " + originalPrice + ", Promotion price: " + promotionPrice);
         }
     }

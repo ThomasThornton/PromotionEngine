@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PromotionEngine
 {
-    class PromotionInfo
+    public class PromotionInfo
     {
         public string SKU { get; set; }
         public int Amount { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PromotionEngine
 {
-    class Promotion
+    public class Promotion
     {
         public int ID { get; set; }
         public List<PromotionInfo> Info { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PromotionEngine
 {
-    static class PromotionCalculation
+    public static class PromotionCalculation
     {
         public static double GetCartTotal(Cart cart, Promotion promotion)
         {

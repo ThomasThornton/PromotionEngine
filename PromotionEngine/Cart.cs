@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PromotionEngine
 {
-    class Cart
+    public class Cart
     {
         public List<SKU> Items = new List<SKU>();
 
