@@ -16,7 +16,6 @@ namespace PromotionEngine
                 new SKU("D", 15)
             };
 
-
             List<PromotionInfo> info1 = new List<PromotionInfo>();
             info1.Add(new PromotionInfo("A", 3));
 
@@ -34,21 +33,36 @@ namespace PromotionEngine
                 new Promotion(3, info3, 30)
             };
 
-            Cart ScenarioA = new Cart();
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
-            ScenarioA.Items.Add(inventory.Find(x => x.ID == "C"));
+            Cart scenarioA = new Cart();
+            scenarioA.Items.Add(inventory.Find(x => x.ID == "A"));
+            scenarioA.Items.Add(inventory.Find(x => x.ID == "B"));
+            scenarioA.Items.Add(inventory.Find(x => x.ID == "C"));
 
-            Cart ScenarioB = new Cart();
-            ScenarioB.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "A"), 5));
-            ScenarioB.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "B"), 5));
-            ScenarioB.Items.Add(inventory.Find(x => x.ID == "C"));
+            Cart scenarioB = new Cart();
+            scenarioB.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "A"), 5));
+            scenarioB.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "B"), 5));
+            scenarioB.Items.Add(inventory.Find(x => x.ID == "C"));
 
-            Cart ScenarioC = new Cart();
-            ScenarioC.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "A"), 3));
-            ScenarioC.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "B"), 5));
-            ScenarioC.Items.Add(inventory.Find(x => x.ID == "C"));
-            ScenarioC.Items.Add(inventory.Find(x => x.ID == "D"));
+            Cart scenarioC = new Cart();
+            scenarioC.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "A"), 3));
+            scenarioC.Items.AddRange(Enumerable.Repeat(inventory.Find(x => x.ID == "B"), 5));
+            scenarioC.Items.Add(inventory.Find(x => x.ID == "C"));
+            scenarioC.Items.Add(inventory.Find(x => x.ID == "D"));
+
+            List<double> promotionPrices = promotions.Select(promotion => PromotionCalculation.GetCartTotal(scenarioA, promotion)).ToList();
+            double originalPrice = scenarioA.Items.Sum(x => x.Price);
+            double promotionPrice = promotionPrices.Sum();
+            Console.WriteLine("Cart: ScenarioA, Original price: " + originalPrice + ", Promotion price: " + (originalPrice - promotionPrice));
+
+            promotionPrices = promotions.Select(promotion => PromotionCalculation.GetCartTotal(scenarioB, promotion)).ToList();
+            originalPrice = scenarioB.Items.Sum(x => x.Price);
+            promotionPrice = promotionPrices.Sum();
+            Console.WriteLine("Cart: ScenarioB, Original price: " + originalPrice + ", Promotion price: " + (originalPrice - promotionPrice));
+
+            promotionPrices = promotions.Select(promotion => PromotionCalculation.GetCartTotal(scenarioC, promotion)).ToList();
+            originalPrice = scenarioC.Items.Sum(x => x.Price);
+            promotionPrice = promotionPrices.Sum();
+            Console.WriteLine("Cart: ScenarioC, Original price: " + originalPrice + ", Promotion price: " + (originalPrice - promotionPrice));
         }
     }
 }

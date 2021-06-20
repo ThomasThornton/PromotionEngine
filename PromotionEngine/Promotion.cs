@@ -10,9 +10,9 @@ namespace PromotionEngine
     {
         public int ID { get; set; }
         public List<PromotionInfo> Info { get; set; }
-        public float PromotionPrice { get; set; }
+        public double PromotionPrice { get; set; }
 
-        public Promotion(int id, List<PromotionInfo> info, float promotionprice)
+        public Promotion(int id, List<PromotionInfo> info, double promotionprice)
         {
             this.ID = id;
             this.Info = info;

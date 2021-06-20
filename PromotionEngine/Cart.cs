@@ -10,11 +10,11 @@ namespace PromotionEngine
     {
         public List<SKU> Items = new List<SKU>();
 
-        public float Total
+        public double Total
         {
             get
             {
-                float total = 0;
+                double total = 0;
                 foreach (var item in Items)
                     total += item.Price;
 

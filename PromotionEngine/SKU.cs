@@ -9,9 +9,9 @@ namespace PromotionEngine
     class SKU
     {
         public string ID { get; }
-        public float Price { get; }
+        public double Price { get; }
 
-        public SKU(string id, float price)
+        public SKU(string id, double price)
         {
             this.ID = id;
             this.Price = price;
